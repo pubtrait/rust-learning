@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package helloworld;
+
+service Greeter {
+  rpc SayHello(HelloRequest) returns (HelloReply);
+  rpc ExePlus(OpReq) returns (OpRsp);
+}
+
+message HelloRequest { string name = 1; }
+
+message HelloReply { string message = 1; }
+
+message OpReq {
+  uint64 opOne = 1;
+  uint64 opTwo = 2;
+}
+
+message OpRsp { uint64 res = 1; }
